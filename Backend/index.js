@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -10,6 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+app.use("/api/users",userRoutes);
+// This code initializes an Express application, configures it to parse JSON and URL-encoded data, and sets up cookie parsing.
+
 
 // Utils
 const port = process.env.PORT;
@@ -26,3 +31,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
+// This code initializes an Express server, connects to a MongoDB database, and sets up a route for user-related operations.
+// It uses environment variables for configuration and includes middleware for parsing JSON and cookies.
