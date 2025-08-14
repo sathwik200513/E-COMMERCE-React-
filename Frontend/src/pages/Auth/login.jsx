@@ -12,9 +12,9 @@ const login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [login, { isLoading }] = useLoginMutation();
-  
+
   const { userInfo } = useSelector((state) => state.auth);
-  
+
   const { search } = useLocation();
 
   const sp = new URLSearchParams(search);
@@ -100,6 +100,11 @@ const login = () => {
             </p>
           </div>
         </div>
+        <img
+          src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
+          alt=""
+          className="h-[46rem] w-[80%] xl:block md:hidden sm:hidden rounded-lg"
+        />
       </section>
     </div>
   );
