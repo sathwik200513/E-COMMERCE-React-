@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import categoryRoutes from "./routes/categoryRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use("/api/users", userRoutes);
+app.use("/api/category", categoryRoutes);
 // This code initializes an Express application, configures it to parse JSON and URL-encoded data, and sets up cookie parsing.
 
 // Utils
